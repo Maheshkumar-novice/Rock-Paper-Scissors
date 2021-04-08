@@ -1,0 +1,164 @@
+/* Common */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat&family=Poppins&display=swap");
+/* font-family: 'Merriweather', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif; */
+body {
+  height: 100vh;
+  /* background-color: rgba(196, 196, 196, 0.06); */
+  background: url(/images/paper.png) no-repeat bottom right,
+    url(/images/cut.png) no-repeat bottom left,
+    url(/images/meteorite.png) no-repeat -17px -10px,
+    url(/images/meteorite.png) no-repeat bottom center;
+  background-size: 100px 100px;
+  background-color: rgba(0, 0, 0, 1);
+}
+html {
+  font-size: 62.5%;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+.primary-heading {
+  margin: 0;
+  font-size: 4rem;
+  font-family: "Merriweather", serif;
+  text-align: center;
+  color: #429869;
+}
+.fa-home,
+.fa-bars {
+  cursor: pointer;
+  color: rgb(209, 52, 41);
+}
+/* Home Page */
+.home-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+.user-prompt {
+  font-size: 5rem;
+  color: #a61e13;
+  text-align: center;
+}
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.play-button,
+.change-user-button {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #a61e13;
+  background-color: #60d394;
+  font-size: 2rem;
+  width: 15em;
+  min-width: 5em;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+@media (max-width: 700px) {
+  .primary-heading {
+    font-size: 3rem;
+  }
+}
+/* Game page */
+.game-main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  justify-items: center;
+  gap: 5em;
+}
+.player-name {
+  color: #a61e13;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 3rem;
+}
+.user-choices,
+.computer-choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6rem;
+}
+.rock,
+.paper,
+.scissors {
+  display: block;
+  width: 150px;
+  height: 150px;
+  /* margin: 4.5em 3em; */
+}
+.score-board {
+  font-family: "Montserrat", sans-serif;
+}
+.score-heading {
+  color: #a61e13;
+  text-align: center;
+}
+.score-table * {
+  color: #429869;
+  font-size: 2rem;
+  text-align: center;
+}
+.score-table {
+  width: 300px;
+  margin-bottom: 5rem;
+}
+.score-table td,
+.score-table th {
+  width: 50%;
+}
+.score-row td:first-child {
+  background-color: #429869;
+  color: #ffd97d;
+}
+.score-row td:nth-child(2) {
+  color: #429869;
+  background-color: #ffd97d;
+}
+@media (max-width: 700px) {
+  .rock,
+  .paper,
+  .scissors {
+    width: 100px;
+    height: 100px;
+  }
+  .player-name {
+    font-size: 2.5rem;
+  }
+  .game-main {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 5em;
+    justify-items: center;
+  }
+  .score-board {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+}
+
+/* result page */
