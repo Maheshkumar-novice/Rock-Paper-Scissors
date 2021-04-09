@@ -45,9 +45,6 @@ window.addEventListener('keydown', (e) => {
     else if (e.key === 'd') {
         userChoiceVar = 'scissors';
     }
-    else if (e.key === 'h') {
-        location.replace('./index.html');
-    }
     else {
         return;
     }

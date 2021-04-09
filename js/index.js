@@ -5,9 +5,6 @@ window.addEventListener('keydown', (e) => {
     else if (e.key === 'c') {
         document.querySelector('.change-user-button').click();
     }
-    else if (e.key === 'h') {
-        location.replace('./index.html');
-    }
     else {
         return;
     }

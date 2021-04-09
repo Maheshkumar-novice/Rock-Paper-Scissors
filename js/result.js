@@ -15,9 +15,6 @@ window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         document.querySelector('a').click();
     }
-    else if (e.key === 'h') {
-        location.replace('./index.html');
-    }
     else {
         return;
     }
