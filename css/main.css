@@ -110,6 +110,8 @@ game page
   grid-template-columns: auto auto auto;
   grid-template-rows: auto;
   justify-items: center;
+  justify-content: center;
+  /* align-items: center; */
   gap: 5em;
 }
 .player-name {
@@ -170,7 +172,7 @@ game page
   background-color: #ffd97d;
 }
 tr:not(.score-row) {
-  opacity: 0.7;
+  opacity: 0.4;
 }
 tr:not(.score-row):hover {
   opacity: 0.9;
@@ -189,14 +191,16 @@ tr:not(.score-row):hover {
 }
 .caption {
   font-size: 2rem;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
+  transform: translateX(-15px);
   color: #ffd97d;
 }
 @media (min-width: 900px) {
   .score-table {
     width: 500px;
   }
+  
 }
 @media (max-width: 1000px) {
   .rock,
@@ -218,6 +222,9 @@ tr:not(.score-row):hover {
   .score-board {
     grid-row: 2/3;
     grid-column: 1/3;
+  }
+  .caption {
+    transform: translateX(0px);
   }
 }
 @media (max-width: 700px) {
