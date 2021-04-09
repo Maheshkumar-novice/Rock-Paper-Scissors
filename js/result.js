@@ -9,8 +9,6 @@ if (wholePart === "User") {
 }
 winner.style.fontWeight = "bold";
 winner.textContent = wholePart;
-
-
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         document.querySelector('a').click();
