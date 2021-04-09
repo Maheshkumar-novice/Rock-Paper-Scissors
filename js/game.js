@@ -29,7 +29,7 @@ let userScorePlaces = Array.from(document.querySelectorAll('.current-score-user'
 let computerScorePlaces = Array.from(document.querySelectorAll('.current-score-computer'));
 let scoreTable = document.querySelector('.score-table');
 let caption = document.querySelector('.caption');
-
+window.onload = document.querySelector('.user-name').textContent = localStorage.getItem('username');
 // Event Listeners:
 userChoiceList.forEach(item => {
     item.addEventListener('click', userChoice);

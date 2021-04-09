@@ -183,7 +183,8 @@ game page
   height: 150px;
   /* margin: 4.5em 3em; */
 }
-.current-score {
+.current-score-user,
+.current-score-computer {
   color: #429869;
   vertical-align: middle;
 }
