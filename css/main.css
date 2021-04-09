@@ -187,6 +187,12 @@ tr:not(.score-row):hover {
   color: #ffffff;
   background-color: #333333;
 }
+.caption {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #ffd97d;
+}
 @media (min-width: 900px) {
   .score-table {
     width: 500px;

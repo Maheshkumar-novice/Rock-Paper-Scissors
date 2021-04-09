@@ -14,27 +14,33 @@
 // Update Opacity Function
 // Reset Opacity Function
 // Load Result Function
+// Update Caption Function
 
 // Global Variables:
 let userChoiceVar;
 let computerChoiceVar;
 let userScore = 0;
 let computerScore = 0;
+
 // Elements Selection:
 let userChoiceList = Array.from(document.querySelectorAll('.user-choice-list'));
 let computerChoiceList = Array.from(document.querySelectorAll('.computer-choice-list'))
 let userScorePlaces = Array.from(document.querySelectorAll('.current-score-user'));
 let computerScorePlaces = Array.from(document.querySelectorAll('.current-score-computer'));
 let scoreTable = document.querySelector('.score-table');
+let caption = document.querySelector('.caption');
+
 // Event Listeners:
 userChoiceList.forEach(item => {
     item.addEventListener('click', userChoice);
 });
+
 // User Choice Function:
 function userChoice(e) {
     userChoiceVar = e.target.classList[0];
     getResult(userChoiceVar, computerChoice());
 }
+
 // Computer Choice Function:
 function computerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
@@ -42,9 +48,11 @@ function computerChoice() {
     let choice = choices[choiceIndex];
     return choice;
 }
+
 // Get Result Function:
 function getResult(userChoiceVar, computerChoiceVar) {
     updateOpacity(userChoiceVar, computerChoiceVar);
+    updateCaption(userChoiceVar, computerChoiceVar);
     console.log(userChoiceVar, computerChoiceVar);
     if (userChoiceVar === computerChoiceVar) {
         console.log('draw');
@@ -64,6 +72,7 @@ function getResult(userChoiceVar, computerChoiceVar) {
     calculateScore('user');
     return;
 }
+
 // Calculate Score Function: 
 function calculateScore(winner) {
     if (winner === 'user') {
@@ -76,6 +85,7 @@ function calculateScore(winner) {
     updateScore();
     findWinner();
 }
+
 // Update Score Function:
 function updateScore() {
     userScorePlaces.forEach(item => {
@@ -85,6 +95,7 @@ function updateScore() {
         item.textContent = computerScore;
     });
 }
+
 // Find Winner Function:
 function findWinner() {
     if (userScore === 5) {
@@ -100,12 +111,14 @@ function findWinner() {
         loadResult('computer');
     }
 }
+
 // Reset Score Function:
 function resetScore() {
     userScore = 0;
     computerScore = 0;
     clearTable();
 }
+
 // Update Table Function:
 function updateTable(userChoiceVar, computerChoiceVar, result) {
     let tr = document.createElement('tr');
@@ -130,6 +143,7 @@ function updateTable(userChoiceVar, computerChoiceVar, result) {
     scoreTable.appendChild(tr);
     console.log(scoreTable);
 }
+
 // Clear Table Function:
 function clearTable() {
     let temp = Array.from(document.querySelectorAll('.score-table tr'))[0];
@@ -139,6 +153,7 @@ function clearTable() {
     }
     resetOpacity();
 }
+
 // Update Opacity Function:
 function updateOpacity(userChoiceVar, computerChoiceVar) {
     for (let i = 0; i < userChoiceList.length; i++) {
@@ -157,6 +172,7 @@ function updateOpacity(userChoiceVar, computerChoiceVar) {
         computerChoiceList[i].style.opacity = 0.3;
     }
 }
+
 // Reset Opacity Function:
 function resetOpacity() {
     for (let i = 0; i < userChoiceList.length; i++) {
@@ -164,8 +180,25 @@ function resetOpacity() {
         computerChoiceList[i].style.opacity = 1;
     }
 }
+
 // Load Result Function:
 function loadResult(winner) {
     localStorage.setItem('winner', winner);
     location.replace('./result.html');
+}
+
+// Update Caption Function: 
+function updateCaption(opt1, opt2) {
+    if ((opt1 === 'rock' && opt2 === 'paper') || (opt1 === 'paper' && opt2 === 'rock')) {
+        caption.textContent = "Rock Rolled by Paper!";
+    }
+    else if ((opt1 === 'paper' && opt2 === 'scissors') || (opt1 === 'scissors' && opt2 === 'paper')) {
+        caption.textContent = "Rest in Pieces Paper!";
+    }
+    else if ((opt1 === 'scissors' && opt2 === 'rock') || (opt1 === 'rock' && opt2 === 'scissors')) {
+        caption.textContent = "Scissors Scared!";
+    }
+    else {
+        caption.textContent = "I Hate Draws!";
+    }
 }

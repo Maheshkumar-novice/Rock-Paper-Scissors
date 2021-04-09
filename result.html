@@ -32,9 +32,17 @@
     </main>
     <!-- <script src="./js/main.js"></script> -->
     <script>
-      document.querySelector(".winner").textContent =
-        localStorage.getItem("winner")[0].toUpperCase() +
-        localStorage.getItem("winner").slice(1);
+      let winner = document.querySelector(".winner");
+      let firstPart = localStorage.getItem("winner")[0].toUpperCase();
+      let secondPart = localStorage.getItem("winner").slice(1);
+      let wholePart = firstPart + secondPart;
+      if (wholePart === "User") {
+        winner.style.color = "#ffd97d";
+      } else {
+        winner.style.color = "#a61e13";
+      }
+      winner.style.fontWeight = "bold";
+      winner.textContent = wholePart;
     </script>
   </body>
 </html>
