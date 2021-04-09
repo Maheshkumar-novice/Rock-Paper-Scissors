@@ -10,8 +10,9 @@ if (wholePart === "User") {
 winner.style.fontWeight = "bold";
 winner.textContent = wholePart;
 window.addEventListener('keydown', (e) => {
+    console.log(e);
     if (e.key === 'Enter') {
-        document.querySelector('a').click();
+        document.querySelector('.play-again-button').click();
     }
     else {
         return;

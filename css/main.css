@@ -3,10 +3,11 @@
 common styles
 ============================================
 */
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat&family=Poppins&display=swap");
 /* font-family: 'Merriweather', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat&family=Poppins&display=swap");
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -66,8 +67,7 @@ img {
   color: #a61e13;
   background-color: #60d394;
   font-size: 2rem;
-  width: 15em;
-  min-width: 5em;
+  width: 15rem;
   margin: 0.5em;
   padding: 0.5em;
 }
@@ -110,6 +110,7 @@ home page
   background-color: rgba(0, 0, 0, 1);
 }
 .home-main {
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +133,16 @@ home page
     font-size: 3rem;
   }
 }
+@media (max-width: 400px) {
+  .user-prompt {
+    font-size: 3.5rem;
+  }
+  .play-button,
+  .change-user-button {
+    font-size: 1.5rem;
+    width: 15rem;
+  }
+}
 
 /*
 ============================================ 
@@ -139,18 +150,16 @@ game page
 ============================================
 */
 .game-body {
+  width: 100%;
   background: url(/images/meteorite.png) no-repeat -17px -10px;
   background-size: 100px 100px;
   background-color: rgba(0, 0, 0, 1);
 }
 .game-main {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   justify-items: center;
-  justify-content: center;
-  /* align-items: center; */
-  gap: 5em;
 }
 .player-name {
   color: #a61e13;
@@ -161,7 +170,7 @@ game page
 .user-choices,
 .computer-choices {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 6rem;
@@ -227,12 +236,13 @@ tr:not(.score-row):hover {
   color: #ffffff;
   background-color: #333333;
 }
+.player-name {
+  text-align: left;
+}
 .caption {
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  padding-right: 2.5rem;
-  /* transform: translateX(-15px); */
   color: #ffd97d;
 }
 @media (min-width: 900px) {
@@ -252,9 +262,8 @@ tr:not(.score-row):hover {
   }
   .game-main {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 5em;
     justify-items: center;
   }
   .score-board {
@@ -263,7 +272,6 @@ tr:not(.score-row):hover {
   }
   .caption {
     padding-right: 0;
-    /* transform: translateX(0px); */
   }
 }
 @media (max-width: 700px) {
@@ -271,7 +279,22 @@ tr:not(.score-row):hover {
     width: 350px;
   }
 }
-
+@media (max-width: 400px) {
+  .player-name {
+    font-size: 2rem;
+  }
+  .score-table {
+    width: 300px;
+  }
+}
+@media (max-width: 300px) {
+  .player-name {
+    font-size: 1.5rem;
+  }
+  .score-table {
+    width: 200px;
+  }
+}
 /*
 ============================================ 
 result page
@@ -322,5 +345,11 @@ result page
   .result-img {
     width: 150px;
     height: 150px;
+  }
+}
+@media (max-width: 400px) {
+  .play-again-button {
+    font-size: 1.5rem;
+    width: 15rem;
   }
 }
