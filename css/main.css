@@ -1,16 +1,15 @@
-/* Common */
+/*
+============================================ 
+common styles
+============================================
+*/
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat&family=Poppins&display=swap");
 /* font-family: 'Merriweather', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif; */
 body {
   height: 100vh;
-  /* background-color: rgba(196, 196, 196, 0.06); */
-  background: url(/images/paper.png) no-repeat bottom right,
-    url(/images/cut.png) no-repeat bottom left,
-    url(/images/meteorite.png) no-repeat -17px -10px,
-    url(/images/meteorite.png) no-repeat bottom center;
-  background-size: 100px 100px;
+  background-color: rgba(196, 196, 196, 0.06);
   background-color: rgba(0, 0, 0, 1);
 }
 html {
@@ -21,6 +20,9 @@ h1 {
 }
 h2 {
   font-size: 3rem;
+}
+img {
+  display: block;
 }
 .primary-header {
   display: flex;
@@ -39,7 +41,37 @@ h2 {
   cursor: pointer;
   color: rgb(209, 52, 41);
 }
-/* Home Page */
+.play-button,
+.change-user-button,
+.play-again-button {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #a61e13;
+  background-color: #60d394;
+  font-size: 2rem;
+  width: 15em;
+  min-width: 5em;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+/*
+============================================ 
+home page
+============================================
+*/
+.home-body {
+  background: url(/images/paper.png) no-repeat bottom right,
+    url(/images/cut.png) no-repeat bottom left,
+    url(/images/meteorite.png) no-repeat -17px -10px,
+    url(/images/meteorite.png) no-repeat bottom center;
+  background-size: 100px 100px;
+  background-color: rgba(0, 0, 0, 1);
+}
 .home-main {
   display: flex;
   justify-content: center;
@@ -57,30 +89,22 @@ h2 {
   justify-content: center;
   flex-direction: column;
 }
-.play-button,
-.change-user-button {
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  color: #a61e13;
-  background-color: #60d394;
-  font-size: 2rem;
-  width: 15em;
-  min-width: 5em;
-  margin: 0.5em;
-  padding: 0.5em;
-}
 
 @media (max-width: 700px) {
   .primary-heading {
     font-size: 3rem;
   }
 }
-/* Game page */
+/*
+============================================ 
+game page
+============================================
+*/
+.game-body {
+  background: url(/images/meteorite.png) no-repeat -17px -10px;
+  background-size: 100px 100px;
+  background-color: rgba(0, 0, 0, 1);
+}
 .game-main {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -105,10 +129,15 @@ h2 {
 .rock,
 .paper,
 .scissors {
+  cursor: pointer;
   display: block;
   width: 150px;
   height: 150px;
   /* margin: 4.5em 3em; */
+}
+.current-score {
+  color: #429869;
+  vertical-align: middle;
 }
 .score-board {
   font-family: "Montserrat", sans-serif;
@@ -123,8 +152,10 @@ h2 {
   text-align: center;
 }
 .score-table {
-  width: 300px;
+  width: 400px;
   margin-bottom: 5rem;
+  border-collapse: separate;
+  border-spacing: 1em;
 }
 .score-table td,
 .score-table th {
@@ -138,7 +169,30 @@ h2 {
   color: #429869;
   background-color: #ffd97d;
 }
-@media (max-width: 700px) {
+tr:not(.score-row) {
+  opacity: 0.3;
+}
+tr:not(.score-row):hover {
+  opacity: 0.9;
+}
+.user-won {
+  color: #ffd97d;
+  background-color: #429869;
+}
+.computer-won {
+  color: #429869;
+  background-color: #ffd97d;
+}
+.draw {
+  color: #ffffff;
+  background-color: #333333;
+}
+@media (min-width: 900px) {
+  .score-table {
+    width: 500px;
+  }
+}
+@media (max-width: 1000px) {
   .rock,
   .paper,
   .scissors {
@@ -160,5 +214,60 @@ h2 {
     grid-column: 1/3;
   }
 }
-
-/* result page */
+@media (max-width: 700px) {
+  .score-table {
+    width: 350px;
+  }
+}
+/*
+============================================ 
+result page
+============================================
+*/
+.result-body {
+  background: url(/images/meteorite.png) no-repeat -17px -10px;
+  background-size: 100px 100px;
+  background-color: rgba(0, 0, 0, 1);
+}
+.result-main p {
+  margin: 0;
+}
+.result-main {
+  height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.result-img {
+  width: 200px;
+  height: 200px;
+}
+.result-message {
+  margin: 0;
+  font-size: 5rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #429869;
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 950px) {
+  .result-main {
+    flex-direction: column;
+  }
+  .result-img {
+    width: 170px;
+    height: 170px;
+  }
+}
+@media (max-width: 700px) {
+  .result-img {
+    width: 150px;
+    height: 150px;
+  }
+}

@@ -12,12 +12,28 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="result-body">
     <header class="primary-header">
-      <i class="fas fa-bars fa-4x"></i>
+      <i class="fas fa-bars fa-3x"></i>
       <h1 class="primary-heading">Rock, Paper, Scissors</h1>
-      <a href="./index.html"><i class="fas fa-home fa-4x"></i></a>
+      <a href="./index.html"><i class="fas fa-home fa-3x"></i></a>
     </header>
+    <main class="result-main">
+      <div class="user-result">
+        <img src="./images/man.png" alt="user" class="result-img" />
+        <p class="player-name">User: <span class="current-score">0</span></p>
+      </div>
+      <div class="result">
+        <p class="result-message"><span class="winner">User</span> Won!</p>
+        <a href="./game.html" class="play-again-button">Go Again!</a>
+      </div>
+      <div class="computer-result">
+        <img src="./images/binary-code.png" alt="computer" class="result-img" />
+        <p class="player-name">
+          Computer: <span class="current-score">0</span>
+        </p>
+      </div>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>

@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body style="background-image: none">
+  <body class="game-body">
     <header class="primary-header">
       <i class="fas fa-bars fa-3x"></i>
       <h1 class="primary-heading">Rock, Paper, Scissors</h1>
@@ -20,7 +20,7 @@
     </header>
     <main class="game-main">
       <div class="user-choices">
-        <p class="player-name">User: <span class="current-score"></span></p>
+        <p class="player-name">User: <span class="current-score">0</span></p>
         <img src="./images/meteorite.png" alt="Rock" class="rock" />
         <img src="./images/paper.png" alt="Paper" class="paper" />
         <img src="./images/cut.png" alt="Scissors" class="scissors" />
@@ -32,10 +32,22 @@
             <td>0</td>
             <td>0</td>
           </tr>
+          <tr>
+            <td class="user-won">Rock</td>
+            <td class="user-won">Scissors</td>
+          </tr>
+          <tr>
+            <td class="computer-won">Rock</td>
+            <td class="computer-won">Scissors</td>
+          </tr>
+          <tr>
+            <td class="draw">Rock</td>
+            <td class="draw">Scissors</td>
+          </tr>
         </table>
       </div>
       <div class="computer-choices">
-        <p class="player-name">Computer: <span class="current-score"></span></p>
+        <p class="player-name">Computer: <span class="current-score">0</span></p>
         <img src="./images/meteorite.png" alt="Rock" class="rock" />
         <img src="./images/paper.png" alt="Paper" class="paper" />
         <img src="./images/cut.png" alt="Scissors" class="scissors" />
