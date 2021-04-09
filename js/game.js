@@ -34,7 +34,25 @@ let caption = document.querySelector('.caption');
 userChoiceList.forEach(item => {
     item.addEventListener('click', userChoice);
 });
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'a') {
+        userChoiceVar = 'rock';
 
+    }
+    else if (e.key === 's') {
+        userChoiceVar = 'paper';
+    }
+    else if (e.key === 'd') {
+        userChoiceVar = 'scissors';
+    }
+    else if (e.key === 'h') {
+        location.replace('./index.html');
+    }
+    else {
+        return;
+    }
+    getResult(userChoiceVar, computerChoice());
+});
 // User Choice Function:
 function userChoice(e) {
     userChoiceVar = e.target.classList[0];
@@ -141,7 +159,7 @@ function updateTable(userChoiceVar, computerChoiceVar, result) {
     tr.appendChild(td1);
     tr.appendChild(td2);
     scoreTable.appendChild(tr);
-    console.log(scoreTable);
+    // console.log(scoreTable);
 }
 
 // Clear Table Function:
