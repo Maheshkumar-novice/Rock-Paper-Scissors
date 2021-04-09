@@ -121,7 +121,7 @@ game page
 .user-choices,
 .computer-choices {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   gap: 6rem;
@@ -170,7 +170,7 @@ game page
   background-color: #ffd97d;
 }
 tr:not(.score-row) {
-  opacity: 0.3;
+  opacity: 0.7;
 }
 tr:not(.score-row):hover {
   opacity: 0.9;

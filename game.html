@@ -20,19 +20,33 @@
     </header>
     <main class="game-main">
       <div class="user-choices">
-        <p class="player-name">User: <span class="current-score">0</span></p>
-        <img src="./images/meteorite.png" alt="Rock" class="rock" />
-        <img src="./images/paper.png" alt="Paper" class="paper" />
-        <img src="./images/cut.png" alt="Scissors" class="scissors" />
+        <p class="player-name">
+          User: <span class="current-score-user">0</span>
+        </p>
+        <img
+          src="./images/meteorite.png"
+          alt="Rock"
+          class="rock user-choice-list"
+        />
+        <img
+          src="./images/paper.png"
+          alt="Paper"
+          class="paper user-choice-list"
+        />
+        <img
+          src="./images/cut.png"
+          alt="Scissors"
+          class="scissors user-choice-list"
+        />
       </div>
       <div class="score-board">
         <h2 class="score-heading">Scores:</h2>
         <table class="score-table">
           <tr class="score-row">
-            <td>0</td>
-            <td>0</td>
+            <td class="current-score-user">0</td>
+            <td class="current-score-computer">0</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td class="user-won">Rock</td>
             <td class="user-won">Scissors</td>
           </tr>
@@ -43,14 +57,28 @@
           <tr>
             <td class="draw">Rock</td>
             <td class="draw">Scissors</td>
-          </tr>
+          </tr> -->
         </table>
       </div>
       <div class="computer-choices">
-        <p class="player-name">Computer: <span class="current-score">0</span></p>
-        <img src="./images/meteorite.png" alt="Rock" class="rock" />
-        <img src="./images/paper.png" alt="Paper" class="paper" />
-        <img src="./images/cut.png" alt="Scissors" class="scissors" />
+        <p class="player-name">
+          Computer: <span class="current-score-computer">0</span>
+        </p>
+        <img
+          src="./images/meteorite.png"
+          alt="Rock"
+          class="rock computer-choice-list"
+        />
+        <img
+          src="./images/paper.png"
+          alt="Paper"
+          class="paper computer-choice-list"
+        />
+        <img
+          src="./images/cut.png"
+          alt="Scissors"
+          class="scissors computer-choice-list"
+        />
       </div>
     </main>
     <script src="./js/main.js"></script>

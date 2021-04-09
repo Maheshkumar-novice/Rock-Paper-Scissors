@@ -21,7 +21,6 @@
     <main class="result-main">
       <div class="user-result">
         <img src="./images/man.png" alt="user" class="result-img" />
-        <p class="player-name">User: <span class="current-score">0</span></p>
       </div>
       <div class="result">
         <p class="result-message"><span class="winner">User</span> Won!</p>
@@ -29,11 +28,13 @@
       </div>
       <div class="computer-result">
         <img src="./images/binary-code.png" alt="computer" class="result-img" />
-        <p class="player-name">
-          Computer: <span class="current-score">0</span>
-        </p>
       </div>
     </main>
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
+    <script>
+      document.querySelector(".winner").textContent =
+        localStorage.getItem("winner")[0].toUpperCase() +
+        localStorage.getItem("winner").slice(1);
+    </script>
   </body>
 </html>
