@@ -29,9 +29,10 @@ let userScorePlaces = Array.from(document.querySelectorAll('.current-score-user'
 let computerScorePlaces = Array.from(document.querySelectorAll('.current-score-computer'));
 let scoreTable = document.querySelector('.score-table');
 let caption = document.querySelector('.caption');
-window.onload = document.querySelector('.user-name').textContent = localStorage.getItem('username');
+
 
 // Event Listeners:
+window.onload = document.querySelector('.user-name').textContent = localStorage.getItem('username');
 userChoiceList.forEach(item => {
     item.addEventListener('click', userChoice);
 });
@@ -158,7 +159,10 @@ function updateTable(userChoiceVar, computerChoiceVar, result) {
     tr.appendChild(td1);
     tr.appendChild(td2);
     scoreTable.appendChild(tr);
-    // console.log(scoreTable);
+    // console.log(scoreTable)
+    let trLastChild = document.querySelectorAll('tr:last-child');
+    trLastChild[trLastChild.length - 1].style.opacity = 0.5;
+    trLastChild[trLastChild.length - 1].previousSibling.style.opacity = 1;
 }
 
 // Clear Table Function:
@@ -176,17 +180,17 @@ function updateOpacity(userChoiceVar, computerChoiceVar) {
     for (let i = 0; i < userChoiceList.length; i++) {
         console.log(userChoiceList[i].textContent);
         if (userChoiceList[i].classList.contains(userChoiceVar)) {
-            userChoiceList[i].style.opacity = 1;
+            userChoiceList[i].style.opacity = 0.5;
             continue;
         }
-        userChoiceList[i].style.opacity = 0.3;
+        userChoiceList[i].style.opacity = 1;
     }
     for (let i = 0; i < computerChoiceList.length; i++) {
         if (computerChoiceList[i].classList.contains(computerChoiceVar)) {
-            computerChoiceList[i].style.opacity = 1;
+            computerChoiceList[i].style.opacity = 0.5;
             continue;
         }
-        computerChoiceList[i].style.opacity = 0.3;
+        computerChoiceList[i].style.opacity = 1;
     }
 }
 
