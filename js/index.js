@@ -1,3 +1,5 @@
+let changeNameButton = document.querySelector('.change-user-button');
+
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === 'p') {
         document.querySelector('.play-button').click();
@@ -14,7 +16,6 @@ if (!localStorage.getItem('username')) {
     localStorage.setItem('username', 'User');
 }
 
-let changeNameButton = document.querySelector('.change-user-button');
 changeNameButton.addEventListener('click', (e) => {
     e.preventDefault();
     userName = prompt('User Name:', 'User');

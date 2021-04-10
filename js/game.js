@@ -30,6 +30,7 @@ let computerScorePlaces = Array.from(document.querySelectorAll('.current-score-c
 let scoreTable = document.querySelector('.score-table');
 let caption = document.querySelector('.caption');
 window.onload = document.querySelector('.user-name').textContent = localStorage.getItem('username');
+
 // Event Listeners:
 userChoiceList.forEach(item => {
     item.addEventListener('click', userChoice);
@@ -50,6 +51,7 @@ window.addEventListener('keydown', (e) => {
     }
     getResult(userChoiceVar, computerChoice());
 });
+
 // User Choice Function:
 function userChoice(e) {
     userChoiceVar = e.target.classList[0];
